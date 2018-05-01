@@ -192,7 +192,7 @@ class Model(chainer.Chain):
         loss += lambda_val * F.sum(F.square(F.matmul(P1, F.transpose(self.u.W)) - F.matmul(W1, X)))
         loss += lambda_val * F.sum(F.square(F.matmul(P2, F.transpose(self.v.W)) - F.matmul(W2, Y)))
         loss += alpha * F.sum(F.square(A * (R - F.matmul(self.u.W, F.transpose(self.v.W)))))
-        loss += beta * (F.sum(F.square(self.u.W)) + F.sum(F.square(self.v.W)))
+        loss += beta * ((F.sum(F.square(self.u.W)) + F.sum(F.square(self.v.W))))
         return loss
 
 
